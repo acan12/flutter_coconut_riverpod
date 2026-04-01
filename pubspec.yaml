@@ -40,7 +40,7 @@ dependencies:
   hive_flutter: ^1.1.0 
   go_router: ^5.0.2                      # Router
   json_annotation: ^4.6.0
-  freezed_annotation: ^2.1.0
+  freezed_annotation: ^3.1.0
   json_serializable: ^6.3.1
   retrofit: ^4.9.2 #^3.0.1+1
   logger: ^1.0.0
@@ -49,12 +49,15 @@ dependencies:
   # intl: ^0.20.0                         # Format dates
   # flutter_launcher_icons: ^0.10.0       # launcher config
   easy_localization: ^3.0.8          # i18n language
+  freezed: ^3.2.5
     
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   build_runner: ^2.4.8
+  
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
