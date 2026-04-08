@@ -7,10 +7,14 @@ version: 1.0.0+1
 environment:
   sdk: ^3.11.1
 
+db_core:
+  path: ./packages/db
 network_core:
   path: ./packages/network
 repo_core:
   path: ./packages/repo
+security_core:
+  path: ./packages/network
 ui_core:
   path: ./packages/ui
 
