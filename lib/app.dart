@@ -1,5 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_coconut_riverpod/theme.dart';
+import 'package:global_components_library/global_components_library.dart';
 
 import 'flavors.dart';
 import 'pages/my_home_page.dart';
@@ -9,6 +11,9 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    GCLConfiguration.initComponentsTheme(
+      theme: CoconutTheme(textColor: Colors.black, fontFamily: "Zeepay_B"),
+    );
     return MaterialApp(
       title: F.title,
       theme: ThemeData(primarySwatch: Colors.blue),
