@@ -12,6 +12,8 @@
 .swiftpm/
 migrate_working_dir/
 pubspec.lock
+ios/
+assets.tmp.zip
 
 # IntelliJ related
 *.iml
