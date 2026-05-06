@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import '../features/user/data/remote/response/user_response.dart';
 import '../flavors.dart';
 
-class MyHomeScreen extends StatefulWidget {
-  _HomeWidgetState createState() => _HomeWidgetState();
+class SampleHomeScreen extends StatefulWidget {
+  _SampleWidgetState createState() => _SampleWidgetState();
 }
 
-class _HomeWidgetState extends State<StatefulWidget> {
+class _SampleWidgetState extends State<StatefulWidget> {
   int _selectedIndex = 0;
   static const List<Widget> _pages = <Widget> [
     Icon(Icons.call, size: 200,),
@@ -31,7 +31,19 @@ class _HomeWidgetState extends State<StatefulWidget> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      appBar: AppBar(title: Text(F.title)),
+      appBar: AppBar(
+        title: Text(F.title),
+        actions: [
+          PopupMenuButton<String>(
+            icon: const Icon(Icons.more_vert),
+            onSelected: (value) {},
+            itemBuilder: (context) => [
+              const PopupMenuItem(value: 'settings', child: Text('Settings')),
+              const PopupMenuItem(value: 'about', child: Text('About')),
+            ],
+          ),
+        ],
+      ),
       body: Center(
         child: _pages.elementAt(_selectedIndex),
       ),
