@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_coconut_riverpod/screen/main_screen.dart';
 
 import 'flavors.dart';
 import 'screen/sample_home_screen.dart';
@@ -12,14 +13,14 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: F.title,
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: _flavorBanner(child: SampleHomeScreen(), show: kDebugMode),
+      home: _flavorBanner(child: MainScreen(), show: kDebugMode),
     );
   }
 
   Widget _flavorBanner({required Widget child, bool show = true}) => show
       ? Banner(
           location: BannerLocation.topStart,
-          message: F.name,
+          message: F.name.toUpperCase(),
           color: Colors.green.withAlpha(150),
           textStyle: TextStyle(
             fontWeight: FontWeight.w700,
