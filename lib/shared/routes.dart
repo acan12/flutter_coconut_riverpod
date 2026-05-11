@@ -1,4 +1,4 @@
-import 'package:flutter_coconut_riverpod/screen/ui_widget_screen.dart';
+import 'package:flutter_coconut_riverpod/screen/list_items_screen.dart';
 import 'package:flutter_coconut_riverpod/screen/main_screen.dart';
 import 'package:flutter_coconut_riverpod/screen/sample_home_screen.dart';
 import 'package:go_router/go_router.dart';
@@ -14,7 +14,7 @@ class AppRouter {
       GoRoute(
           path: '/demo-app', builder: (context, state) => SampleHomeScreen()),
       GoRoute(
-          path: '/ui-widgets', builder: (context, state) => UIWidgetScreen()),
+          path: '/ui-widgets', builder: (context, state) => ListItemsScreen()),
     ],
   );
 }
