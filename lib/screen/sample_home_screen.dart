@@ -19,10 +19,10 @@ class _SampleWidgetState extends State<StatefulWidget> {
     setState(() {
       _selectedIndex = index;
       UserResponse(id: 1,
-          full_name: "",
-          first_name: "",
+          fullName: "",
+          firstName: "",
           email: "",
-          last_name: "",
+          lastName: "",
           avatar: "");
     });
   }
@@ -50,10 +50,10 @@ class _SampleWidgetState extends State<StatefulWidget> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         items: [
-          BottomNavigationBarItem(icon: new Icon(Icons.call), label: 'Call'),
+          BottomNavigationBarItem(icon: Icon(Icons.call), label: 'Call'),
           BottomNavigationBarItem(
-              icon: new Icon(Icons.camera), label: 'Camera'),
-          BottomNavigationBarItem(icon: new Icon(Icons.chat), label: 'Chat'),
+              icon: Icon(Icons.camera), label: 'Camera'),
+          BottomNavigationBarItem(icon: Icon(Icons.chat), label: 'Chat'),
         ],
         onTap: _onItemTapped,
         selectedItemColor: Colors.white,

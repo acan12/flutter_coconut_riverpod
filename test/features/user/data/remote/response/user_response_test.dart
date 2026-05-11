@@ -4,10 +4,10 @@ import 'package:flutter_coconut_riverpod/features/user/data/remote/response/user
 void main() {
   const testUser = UserResponse(
     id: 1,
-    full_name: 'John Doe',
+    fullName: 'John Doe',
     email: 'john@example.com',
-    first_name: 'John',
-    last_name: 'Doe',
+    firstName: 'John',
+    lastName: 'Doe',
     avatar: 'https://example.com/avatar.jpg',
   );
 
@@ -16,20 +16,20 @@ void main() {
       expect(testUser.id, 1);
     });
 
-    test('creates instance with correct full_name', () {
-      expect(testUser.full_name, 'John Doe');
+    test('creates instance with correct fullName', () {
+      expect(testUser.fullName, 'John Doe');
     });
 
     test('creates instance with correct email', () {
       expect(testUser.email, 'john@example.com');
     });
 
-    test('creates instance with correct first_name', () {
-      expect(testUser.first_name, 'John');
+    test('creates instance with correct fullName', () {
+      expect(testUser.fullName, 'John');
     });
 
-    test('creates instance with correct last_name', () {
-      expect(testUser.last_name, 'Doe');
+    test('creates instance with correct lastName', () {
+      expect(testUser.lastName, 'Doe');
     });
 
     test('creates instance with correct avatar', () {
@@ -41,10 +41,10 @@ void main() {
     test('same values are equal', () {
       const user2 = UserResponse(
         id: 1,
-        full_name: 'John Doe',
+        fullName: 'John Doe',
         email: 'john@example.com',
-        first_name: 'John',
-        last_name: 'Doe',
+        firstName: 'John',
+        lastName: 'Doe',
         avatar: 'https://example.com/avatar.jpg',
       );
       expect(testUser, equals(user2));
@@ -53,10 +53,10 @@ void main() {
     test('different id is not equal', () {
       const user2 = UserResponse(
         id: 2,
-        full_name: 'John Doe',
+        fullName: 'John Doe',
         email: 'john@example.com',
-        first_name: 'John',
-        last_name: 'Doe',
+        firstName: 'John',
+        lastName: 'Doe',
         avatar: 'https://example.com/avatar.jpg',
       );
       expect(testUser, isNot(equals(user2)));
@@ -65,10 +65,10 @@ void main() {
     test('different email is not equal', () {
       const user2 = UserResponse(
         id: 1,
-        full_name: 'John Doe',
+        fullName: 'John Doe',
         email: 'other@example.com',
-        first_name: 'John',
-        last_name: 'Doe',
+        firstName: 'John',
+        lastName: 'Doe',
         avatar: 'https://example.com/avatar.jpg',
       );
       expect(testUser, isNot(equals(user2)));
@@ -79,10 +79,10 @@ void main() {
     test('equal objects have same hashCode', () {
       const user2 = UserResponse(
         id: 1,
-        full_name: 'John Doe',
+        fullName: 'John Doe',
         email: 'john@example.com',
-        first_name: 'John',
-        last_name: 'Doe',
+        firstName: 'John',
+        lastName: 'Doe',
         avatar: 'https://example.com/avatar.jpg',
       );
       expect(testUser.hashCode, equals(user2.hashCode));
@@ -94,7 +94,7 @@ void main() {
       expect(testUser.toString(), contains('1'));
     });
 
-    test('toString contains full_name', () {
+    test('toString contains fullName', () {
       expect(testUser.toString(), contains('John Doe'));
     });
 
@@ -107,10 +107,10 @@ void main() {
     test('creates correct instance from JSON', () {
       final json = {
         'id': 1,
-        'full_name': 'John Doe',
+        'fullName': 'John Doe',
         'email': 'john@example.com',
-        'first_name': 'John',
-        'last_name': 'Doe',
+        'fullName': 'John',
+        'lastName': 'Doe',
         'avatar': 'https://example.com/avatar.jpg',
       };
       expect(UserResponse.fromJson(json), equals(testUser));
@@ -119,10 +119,10 @@ void main() {
     test('parses id correctly', () {
       final json = {
         'id': 42,
-        'full_name': 'Test',
+        'fullName': 'Test',
         'email': 'test@test.com',
-        'first_name': 'Test',
-        'last_name': 'User',
+        'fullName': 'Test',
+        'lastName': 'User',
         'avatar': '',
       };
       expect(UserResponse.fromJson(json).id, 42);
@@ -131,14 +131,14 @@ void main() {
     test('parses empty strings', () {
       final json = {
         'id': 0,
-        'full_name': '',
+        'fullName': '',
         'email': '',
-        'first_name': '',
-        'last_name': '',
+        'fullName': '',
+        'lastName': '',
         'avatar': '',
       };
       final user = UserResponse.fromJson(json);
-      expect(user.full_name, '');
+      expect(user.fullName, '');
       expect(user.email, '');
     });
   });
@@ -148,8 +148,8 @@ void main() {
       expect(testUser.toJson()['id'], 1);
     });
 
-    test('toJson returns correct full_name', () {
-      expect(testUser.toJson()['full_name'], 'John Doe');
+    test('toJson returns correct fullName', () {
+      expect(testUser.toJson()['fullName'], 'John Doe');
     });
 
     test('toJson returns correct email', () {
@@ -159,10 +159,10 @@ void main() {
     test('toJson returns all required keys', () {
       final json = testUser.toJson();
       expect(json.containsKey('id'), isTrue);
-      expect(json.containsKey('full_name'), isTrue);
+      expect(json.containsKey('fullName'), isTrue);
       expect(json.containsKey('email'), isTrue);
-      expect(json.containsKey('first_name'), isTrue);
-      expect(json.containsKey('last_name'), isTrue);
+      expect(json.containsKey('fullName'), isTrue);
+      expect(json.containsKey('lastName'), isTrue);
       expect(json.containsKey('avatar'), isTrue);
     });
 
@@ -174,16 +174,16 @@ void main() {
 
   group('UserResponse copyWith', () {
     test('copyWith changes specified fields', () {
-      final updated = testUser.copyWith(full_name: 'Jane Doe', id: 2);
+      final updated = testUser.copyWith(fullName: 'Jane Doe', id: 2);
       expect(updated.id, 2);
-      expect(updated.full_name, 'Jane Doe');
+      expect(updated.fullName, 'Jane Doe');
     });
 
     test('copyWith preserves unspecified fields', () {
       final updated = testUser.copyWith(id: 99);
       expect(updated.email, testUser.email);
-      expect(updated.first_name, testUser.first_name);
-      expect(updated.last_name, testUser.last_name);
+      expect(updated.fullName, testUser.fullName);
+      expect(updated.lastName, testUser.lastName);
       expect(updated.avatar, testUser.avatar);
     });
 

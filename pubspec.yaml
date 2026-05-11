@@ -21,9 +21,11 @@ ui_core:
 dependencies:
   flutter:
     sdk: flutter
+
   google_fonts: ^8.0.2
   flutter_riverpod: ^3.3.1
   cupertino_icons: ^1.0.8
+  lottie: ^3.3.1
   # remote database
   hive: ^2.2.3                           
   hive_flutter: ^1.1.0 
@@ -31,7 +33,7 @@ dependencies:
   json_annotation: ^4.11.0
   freezed_annotation: ^3.1.0
   json_serializable: ^6.3.1
-  retrofit: ^4.9.2 #^3.0.1+1
+  retrofit: ^4.9.2 #^3.0  .1+1
   logger: ^1.0.0
   dio: ^5.9.2
   pretty_dio_logger: ^1.4.0
@@ -71,6 +73,8 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  assets:
+    - assets/lottie/fire.json
 
   # To add assets to your application, add an assets section, like this:
   # assets:

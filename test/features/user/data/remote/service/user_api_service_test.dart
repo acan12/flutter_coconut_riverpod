@@ -68,15 +68,15 @@ void main() {
       final service = UserApiService(dio);
       final result = await service.getPersonal();
       expect(result.id, 1);
-      expect(result.full_name, 'John Doe');
+      expect(result.fullName, 'John Doe');
       expect(result.email, 'john@example.com');
     });
 
     test('getPersonal maps first_name correctly', () async {
       final service = UserApiService(dio);
       final result = await service.getPersonal();
-      expect(result.first_name, 'John');
-      expect(result.last_name, 'Doe');
+      expect(result.firstName, 'John');
+      expect(result.lastName, 'Doe');
     });
 
     test('getPersonal maps avatar correctly', () async {

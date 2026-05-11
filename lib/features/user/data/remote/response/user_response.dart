@@ -7,10 +7,10 @@ part 'user_response.g.dart';
 abstract class UserResponse with _$UserResponse {
   const factory UserResponse({
     required int id,
-    required String full_name,
+    required String fullName,
     required String email,
-    required String first_name,
-    required String last_name,
+    required String firstName,
+    required String lastName,
     required String avatar
   }) = _UserResponse;
 
