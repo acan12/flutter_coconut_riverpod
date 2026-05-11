@@ -61,7 +61,4 @@ class _SampleWidgetState extends State<StatefulWidget> {
       ),
     );
   }
-
-
-
 }

@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_coconut_riverpod/component/core.dart';
+import 'package:go_router/go_router.dart';
+
+import '../shared/routes.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -15,44 +19,17 @@ class _MainScreenState extends State<MainScreen> {
             child: ListView(
               shrinkWrap: true,
               children: [
-                const CustomButton(textButton: "Go Home Screen"),
-                const CustomButton(textButton: "Go List Item Api Screen", colorBackground: Colors.red,),
-                const CustomButton(textButton: "Go Unified Screen", colorBackground: Colors.blue,),
+                CoreButton(textButton: "Go Home Screen"),
+                const CoreButton(textButton: "Go List Item Api Screen", colorBackground: Colors.red,),
+                CoreButton(textButton: "Go Unified Screen", colorBackground: Colors.blue,
+                  onPressed: () {
+                    context.push(AppRoutes.demoApp);
+                  },
+                ),
               ],
             )
         ),
       ),
     );
   }
-}
-
-class CustomButton extends StatelessWidget {
-  const CustomButton({super.key,
-    required this.textButton,
-    this.colorBackground = Colors.green
-  });
-
-  final String textButton;
-  final MaterialColor colorBackground;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsetsGeometry.symmetric(horizontal: 16.0, vertical: 7.0),
-      child: ElevatedButton(
-        onPressed: () => {},
-        style: ElevatedButton.styleFrom(
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8)
-          ),
-          minimumSize: Size(double.infinity, 50),
-          foregroundColor: Colors.white,
-          backgroundColor: colorBackground,
-          disabledBackgroundColor: Colors.grey,
-        ),
-        child: Text(textButton),
-      ),
-    );
-  }
-
 }
