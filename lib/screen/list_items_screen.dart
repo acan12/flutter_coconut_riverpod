@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shimmer/shimmer.dart';
 
 import '../features/personal/vm/provider/personal_provider.dart';
 
@@ -13,12 +14,34 @@ class ListItemsScreen extends StatelessWidget {
         final value = ref.watch(getPersonalProvider);
 
         return Scaffold(
-          // appBar: AppBar(title: Text('UI Widgets')),
           body: Center(
-            child: Text(value.requireValue.fullName,
-                style: TextStyle(fontSize: 20, color: Colors.blue)),
+            child: value.when(
+              loading: () => Shimmer.fromColors(
+                baseColor: Colors.blue.shade300,
+                highlightColor: Colors.blue.shade100,
+                child: Container(
+                  width: 200,
+                  height: 24,
+                  decoration: BoxDecoration(
+                    color: Colors.blueAccent,
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                ),
+              ),
+              error: (error, stackTrace) => Text(
+                'Error: $error',
+                style: const TextStyle(fontSize: 16, color: Colors.red),
+              ),
+              data: (personal) => SafeArea(
+                child: Text(
+                  personal.fullName,
+                  style: const TextStyle(fontSize: 20, color: Colors.blue),
+                ),
+              ),
+            ),
           ),
         );
-      },);
+      },
+    );
   }
 }

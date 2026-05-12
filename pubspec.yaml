@@ -43,6 +43,7 @@ dependencies:
   easy_localization: ^3.0.8          # i18n language
   multiple_result: ^5.3.0 # A Result package for Dart inspired by dartz's Either type and Kotlin's sealed classes.
   flutter_secure_storage: ^10.0.0
+  shimmer: ^3.0.0
   ytcore_lib_demo:
     git:
       url: https://Ary_Suryawan@bitbucket.org/youtap-technology/ytcorelibdemo.git
