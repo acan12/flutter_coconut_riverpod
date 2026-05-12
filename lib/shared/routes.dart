@@ -10,11 +10,11 @@ class AppRouter {
     initialLocation: AppRoutes.root,
     debugLogDiagnostics: true,
     routes: [
-      GoRoute(path: '/', builder: (context, state) => MainScreen()),
+      GoRoute(path: AppRoutes.root, builder: (context, state) => MainScreen()),
       GoRoute(
-          path: '/demo-app', builder: (context, state) => SampleHomeScreen()),
+          path: AppRoutes.demoApp, builder: (context, state) => SampleHomeScreen()),
       GoRoute(
-          path: '/ui-widgets', builder: (context, state) => ListItemsScreen()),
+          path: AppRoutes.listItems, builder: (context, state) => ListItemsScreen()),
     ],
   );
 }
@@ -22,6 +22,6 @@ class AppRouter {
 class AppRoutes {
   static const String root = '/';
   static const String demoApp = '/demo-app';
-  static const String uiWidgets = '/ui-widgets';
+  static const String listItems = '/list-items';
 
 }

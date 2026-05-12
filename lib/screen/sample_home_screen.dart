@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../features/user/data/remote/response/user_response.dart';
+import '../features/user/data/remote/response/personal_response.dart';
 import '../flavors.dart';
 
 class SampleHomeScreen extends StatefulWidget {
@@ -18,8 +18,9 @@ class _SampleWidgetState extends State<StatefulWidget> {
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
-      UserResponse(id: 1,
-          fullName: "",
+      PersonalResponse(
+        id: 1,
+        fullName: "",
           firstName: "",
           email: "",
           lastName: "",

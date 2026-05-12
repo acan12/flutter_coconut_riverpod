@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_coconut_riverpod/features/user/data/remote/service/user_api_service.dart';
+import 'package:flutter_coconut_riverpod/features/user/data/remote/service/api_service.dart';
 import 'package:flutter_coconut_riverpod/shared/api_config.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 class MockHttpClientAdapter implements HttpClientAdapter {
   final String responseBody;
@@ -43,7 +43,7 @@ const _userJson = '''
 ''';
 
 void main() {
-  group('UserApiService', () {
+  group('ApiService', () {
     late Dio dio;
 
     setUp(() {
@@ -52,12 +52,12 @@ void main() {
     });
 
     test('can be instantiated with Dio', () {
-      final service = UserApiService(dio);
+      final service = ApiService(dio);
       expect(service, isNotNull);
     });
 
     test('can be instantiated with custom baseUrl', () {
-      final service = UserApiService(
+      final service = ApiService(
         dio,
         baseUrl: 'https://custom.api.com/',
       );
@@ -65,7 +65,7 @@ void main() {
     });
 
     test('getPersonal returns UserResponse', () async {
-      final service = UserApiService(dio);
+      final service = ApiService(dio);
       final result = await service.getPersonal();
       expect(result.id, 1);
       expect(result.fullName, 'John Doe');
@@ -73,20 +73,20 @@ void main() {
     });
 
     test('getPersonal maps first_name correctly', () async {
-      final service = UserApiService(dio);
+      final service = ApiService(dio);
       final result = await service.getPersonal();
       expect(result.firstName, 'John');
       expect(result.lastName, 'Doe');
     });
 
     test('getPersonal maps avatar correctly', () async {
-      final service = UserApiService(dio);
+      final service = ApiService(dio);
       final result = await service.getPersonal();
       expect(result.avatar, 'https://example.com/avatar.jpg');
     });
 
     test('getPersonal uses custom baseUrl when provided', () async {
-      final service = UserApiService(
+      final service = ApiService(
         dio,
         baseUrl: 'https://custom.api.com/',
       );

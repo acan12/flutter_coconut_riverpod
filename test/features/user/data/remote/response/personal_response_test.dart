@@ -1,8 +1,8 @@
-  import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_coconut_riverpod/features/user/data/remote/response/user_response.dart';
+  import 'package:flutter_coconut_riverpod/features/user/data/remote/response/personal_response.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  const testUser = UserResponse(
+  const testUser = PersonalResponse(
     id: 1,
     fullName: 'John Doe',
     email: 'john@example.com',
@@ -39,7 +39,7 @@ void main() {
 
   group('UserResponse equality', () {
     test('same values are equal', () {
-      const user2 = UserResponse(
+      const user2 = PersonalResponse(
         id: 1,
         fullName: 'John Doe',
         email: 'john@example.com',
@@ -51,7 +51,7 @@ void main() {
     });
 
     test('different id is not equal', () {
-      const user2 = UserResponse(
+      const user2 = PersonalResponse(
         id: 2,
         fullName: 'John Doe',
         email: 'john@example.com',
@@ -63,7 +63,7 @@ void main() {
     });
 
     test('different email is not equal', () {
-      const user2 = UserResponse(
+      const user2 = PersonalResponse(
         id: 1,
         fullName: 'John Doe',
         email: 'other@example.com',
@@ -77,7 +77,7 @@ void main() {
 
   group('UserResponse hashCode', () {
     test('equal objects have same hashCode', () {
-      const user2 = UserResponse(
+      const user2 = PersonalResponse(
         id: 1,
         fullName: 'John Doe',
         email: 'john@example.com',
@@ -113,7 +113,7 @@ void main() {
         'lastName': 'Doe',
         'avatar': 'https://example.com/avatar.jpg',
       };
-      expect(UserResponse.fromJson(json), equals(testUser));
+      expect(PersonalResponse.fromJson(json), equals(testUser));
     });
 
     test('parses id correctly', () {
@@ -125,7 +125,7 @@ void main() {
         'lastName': 'User',
         'avatar': '',
       };
-      expect(UserResponse.fromJson(json).id, 42);
+      expect(PersonalResponse.fromJson(json).id, 42);
     });
 
     test('parses empty strings', () {
@@ -137,7 +137,7 @@ void main() {
         'lastName': '',
         'avatar': '',
       };
-      final user = UserResponse.fromJson(json);
+      final user = PersonalResponse.fromJson(json);
       expect(user.fullName, '');
       expect(user.email, '');
     });
@@ -168,7 +168,7 @@ void main() {
 
     test('fromJson and toJson are inverse operations', () {
       final json = testUser.toJson();
-      expect(UserResponse.fromJson(json), equals(testUser));
+      expect(PersonalResponse.fromJson(json), equals(testUser));
     });
   });
 
