@@ -3,6 +3,7 @@ import 'package:flutter_coconut_riverpod/component/core.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
 
+import '../shared/app_style.dart';
 import '../shared/routes.dart';
 
 class MainScreen extends StatefulWidget {
@@ -14,15 +15,18 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('App Bar')),
+      appBar: AppBar(title: Text('Demo')),
       body: SafeArea(
         child: Center(
             child: ListView(
               shrinkWrap: true,
               children: [
-                Center(child: Lottie.asset('assets/lottie/fire.json', width: 200, height: 200),),
-                const CoreButton(textButton: "Go List Item Api Screen", colorBackground: Colors.red,),
-                CoreButton(textButton: "Go Unified Screen", colorBackground: Colors.blue,
+                Center(child: Lottie.asset(AppConfig.logo, width: 200, height: 200),),
+                CoreButton(textButton: AppConfig.labelListButton, colorBackground: Colors.red,
+                onPressed: () {
+                  context.push(AppRoutes.listItems);
+                },),
+                CoreButton(textButton: AppConfig.labelDemoButton, colorBackground: Colors.blue,
                   onPressed: () {
                     context.push(AppRoutes.demoApp);
                   },
