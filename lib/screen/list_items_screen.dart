@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../features/user/vm/provider/personal_provider.dart';
+import '../features/personal/vm/provider/personal_provider.dart';
 
 class ListItemsScreen extends StatelessWidget {
   const ListItemsScreen({super.key});

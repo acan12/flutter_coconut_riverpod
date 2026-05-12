@@ -51,7 +51,7 @@ samples, guidance on mobile development, and a full API reference.
       "url": "https://www.businessinsider.com/ex-tesla-president-dominos-pizza-car-sales-2026-4",
       "urlToImage": "https://i.insider.com/69d917f705c9b303c4e76f82?width=1200&format=jpeg",
       "publishedAt": "2026-04-12T08:17:01Z",
-      "content": "Jon McNeill, a former president for Tesla, said Tesla's website required too many clicks and taps before a user purchased a car.IEFA\r\n<ul><li>A former Tesla president said he used Domino's ordering a… [+3121 chars]"
+      "content": "Jon McNeill, a former president for Tesla, said Tesla's website required too many clicks and taps before a personal purchased a car.IEFA\r\n<ul><li>A former Tesla president said he used Domino's ordering a… [+3121 chars]"
     },
     {
       "source": {

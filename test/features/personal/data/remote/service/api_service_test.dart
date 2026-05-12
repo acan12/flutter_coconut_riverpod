@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_coconut_riverpod/features/user/data/remote/service/api_service.dart';
+import 'package:flutter_coconut_riverpod/features/personal/data/remote/service/api_service.dart';
 import 'package:flutter_coconut_riverpod/shared/api_config.dart';
 import 'package:flutter_test/flutter_test.dart';
 
