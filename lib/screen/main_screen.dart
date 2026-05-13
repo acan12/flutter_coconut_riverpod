@@ -22,11 +22,11 @@ class _MainScreenState extends State<MainScreen> {
               shrinkWrap: true,
               children: [
                 Center(child: Lottie.asset(AppConfig.logo, width: 200, height: 200),),
-                CoreButton(textButton: AppConfig.labelListButton, colorBackground: Colors.red,
+                CButton(textButton: AppConfig.labelListButton, colorBackground: Colors.red,
                 onPressed: () {
                   context.push(AppRoutes.listItems);
                 },),
-                CoreButton(textButton: AppConfig.labelDemoButton, colorBackground: Colors.blue,
+                CButton(textButton: AppConfig.labelDemoButton, colorBackground: Colors.blue,
                   onPressed: () {
                     context.push(AppRoutes.demoApp);
                   },

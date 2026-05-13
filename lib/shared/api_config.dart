@@ -5,7 +5,11 @@ abstract class ApiConfig {
   static const domainHost =
       "https://private-f66ab-myportfolio6.apiary-mock.com/";
 
+  static const domainMockHost =
+      "https://mock.apidog.com/m1/1286704-1285397-default/";
+
   static const personal = "personal";
+  static const listOfCountries = "countries";
 
   static Dio getDio() {
     var dio = Dio(

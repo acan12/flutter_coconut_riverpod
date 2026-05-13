@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_coconut_riverpod/features/personal/data/remote/response/personal_response.dart';
 
-class CoreButton extends StatelessWidget {
-  const CoreButton({
+class CButton extends StatelessWidget {
+  const CButton({
     super.key,
     required this.textButton,
     this.onPressed,
