@@ -17,4 +17,11 @@ abstract class ApiConfig {
     dio.interceptors.add(ChuckerDioInterceptor());
     return dio;
   }
+
+  static Dio getDioMock() {
+    var dio = Dio(
+        BaseOptions(baseUrl: domainMockHost, contentType: "application/json"));
+    dio.interceptors.add(ChuckerDioInterceptor());
+    return dio;
+  }
 }

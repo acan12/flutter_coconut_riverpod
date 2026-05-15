@@ -1,4 +1,4 @@
-  import 'package:flutter_coconut_riverpod/features/personal/data/remote/response/personal_response.dart';
+  import 'package:flutter_coconut_riverpod/features/personal/data/remote/response/personal/personal_response.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

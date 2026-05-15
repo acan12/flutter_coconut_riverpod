@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../features/personal/data/remote/response/personal_response.dart';
+import '../features/personal/data/remote/response/personal/personal_response.dart';
 import '../flavors.dart';
 
 class SampleHomeScreen extends StatefulWidget {

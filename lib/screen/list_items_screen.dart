@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_coconut_riverpod/features/personal/vm/provider/country_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shimmer/shimmer.dart';
 
@@ -11,7 +12,7 @@ class ListItemsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer(
       builder: (context, ref, _) {
-        final value = ref.watch(getPersonalProvider);
+        final value = ref.watch(getCountryProvider);
 
         return Scaffold(
           body: Center(
@@ -32,11 +33,17 @@ class ListItemsScreen extends StatelessWidget {
                 'Error: $error',
                 style: const TextStyle(fontSize: 16, color: Colors.red),
               ),
-              data: (personal) => SafeArea(
-                child: Text(
-                  personal.fullName,
-                  style: const TextStyle(fontSize: 20, color: Colors.blue),
-                ),
+              data: (item) => SafeArea(
+                child: ListView.builder(
+                  itemCount: item.data.length,
+                  itemBuilder: (context, index) {
+                    final country = item.data[index];
+                    return ListTile(
+                      title: Text(country.name),
+                      subtitle: Text(country.code),
+                    );
+                  },
+                )
               ),
             ),
           ),

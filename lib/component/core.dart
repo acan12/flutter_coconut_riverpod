@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_coconut_riverpod/features/personal/data/remote/response/personal_response.dart';
+import 'package:flutter_coconut_riverpod/features/personal/data/remote/response/personal/personal_response.dart';
 
 class CButton extends StatelessWidget {
   const CButton({
